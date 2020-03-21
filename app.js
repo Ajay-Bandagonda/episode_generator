@@ -9,7 +9,7 @@ async function pickSeason() {
     return data;
 }
 
-document.querySelector("button").addEventListener("click", async function() {
+$("button").click(async function() {
 
     var data = await pickSeason();
     var episodes = data['Episodes'];
@@ -22,5 +22,11 @@ document.querySelector("button").addEventListener("click", async function() {
 
     document.querySelector("#seasonNum").textContent = `${season}`;
     document.querySelector("#episodeNum").textContent = `${pickedEpisode['Episode']}`;
-    document.querySelector("#episodeName").textContent = `${pickedEpisode['Title']}`;  
+    document.querySelector("#episodeName").textContent = `${pickedEpisode['Title']}`;
+
+    $.getJSON("70136120.json", function(json) {
+        console.log("WORKED FINE");
+        console.log(json);
+    })
+    
 })
