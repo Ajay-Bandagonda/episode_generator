@@ -1,0 +1,17 @@
+body {
+    text-align: center;
+    background-color: #7ad3f6;
+}
+
+h1 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 4rem;
+}
+
+#displaybox {
+    margin-top: 100px;
+}
+
+#episode {
+    margin-left: 10px;
+}

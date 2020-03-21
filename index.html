@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Office Episode Generator</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Permanent Marker Font -->
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Random Episode Generator</h1>
+
+        <div id="displaybox" class="row justify-content-center">
+            <div class="card mb-3" style="max-width: 700px;">
+                <div class="row no-gutters align-items-center">
+                    <div class="col-md-4">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMDNkOTE4NDQtMTNmYi00MWE0LWE4ZTktYTc0NzhhNWIzNzJiXkEyXkFqcGdeQXVyMzQ2MDI5NjU@._V1_.jpg" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div id="cardBody" class="card-body d-none">
+                            <h5 class="card-title">You should watch...</h5>
+                            <p class="card-text">Season: <span id="seasonNum"></span></p>
+                            <p class="card-text">Episode: <span id="episodeNum"></span></p>
+                            <p id="episodeName" class="card-text"></p>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-sm">Generate Episode!</button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="app.js"></script>
+</body>
+</html>
