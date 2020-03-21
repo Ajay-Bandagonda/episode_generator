@@ -18,15 +18,21 @@ $("button").click(async function() {
     var season = data["Season"]
     var pickedEpisode = episodes[Math.floor(Math.random() * numEpisodes)]; 
 
-    document.querySelector("#cardBody").classList.remove("d-none")
+    $("#cardBody").removeClass("d-none")
 
-    document.querySelector("#seasonNum").textContent = `${season}`;
-    document.querySelector("#episodeNum").textContent = `${pickedEpisode['Episode']}`;
-    document.querySelector("#episodeName").textContent = `${pickedEpisode['Title']}`;
+    $("#seasonNum").text(season);
+    $("#episodeNum").text(pickedEpisode['Episode']);
+    $("#episodeName").text(pickedEpisode['Title']);
 
     $.getJSON("70136120.json", function(json) {
-        console.log("WORKED FINE");
-        console.log(json);
+        var seasons = json['video']['seasons']
+        var seasonEpisodes = seasons[Number(season) - 1]['episodes']
+        
+        var episodeID = seasonEpisodes[Number(pickedEpisode['Episode']) - 1]['episodeId']
+        var netflixURL = `https://www.netflix.com/watch/${episodeID}`
+
+        $("#episodeName").attr("href", netflixURL);
+
     })
     
 })
