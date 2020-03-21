@@ -1,5 +1,5 @@
 async function pickSeason() {
-    var url = "http://www.omdbapi.com/?t=The+Office&Season="
+    var url = "https://www.omdbapi.com/?t=The+Office&Season="
     var apiKey = "&apikey=thewdb";
     var seasonNum = Math.floor(Math.random() * 9) + 1; 
 
