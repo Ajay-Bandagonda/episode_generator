@@ -22,7 +22,7 @@ $("button").click(async function() {
 
     $("#seasonNum").text(season);
     $("#episodeNum").text(pickedEpisode['Episode']);
-    $("#episodeName").text(pickedEpisode['Title']);
+    $("#episodeName").text(`"${pickedEpisode['Title']}"`);
 
     $.getJSON("70136120.json", function(json) {
         var seasons = json['video']['seasons']
@@ -31,8 +31,8 @@ $("button").click(async function() {
         var episodeID = seasonEpisodes[Number(pickedEpisode['Episode']) - 1]['episodeId']
         var netflixURL = `https://www.netflix.com/watch/${episodeID}`
 
-        $("#episodeName").attr("href", netflixURL);
-
+        $("#episodeUrl").attr("href", netflixURL);
+        $("#episodeUrl").text("Click here to go to Netflix!");
     })
     
 })
